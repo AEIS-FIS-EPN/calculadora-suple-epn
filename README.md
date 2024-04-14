@@ -6,7 +6,7 @@ Aplicación web para calcular la nota a obtener en el examen final (supletorio) 
 
 Ingresa las calificaciones que obtuviste en los 2 bimestres y obtendrás la calificación que debes obtener en el examen final.
 También se te indicará si apruebas el semestre sin examen final o si repruebas directamente.
-Aplicación:
+Demo: https://calculadora-suple-epn.pages.dev/
 
 ## Cómo Contribuir
 
