@@ -5,7 +5,7 @@
 		class=" hover:text-surface-50 transition-all">&copy; AEIS {new Date().getFullYear()}</a
 	>
 	<a
-		href="https://"
+		href="https://github.com/Cheveniko/calculadora-suple-epn"
 		target="_blank"
 		class="hover:text-surface-50 group flex items-center gap-x-2 transition-all"
 	>
