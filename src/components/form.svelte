@@ -69,7 +69,7 @@
 	{#if isValid}
 		{#if approved}
 			<p class="text-success-600">
-				Aprobaste la materia con {semesterGrade.toFixed(2)}, felicitaciones! 🎉
+				Aprobaste la materia con {semesterGrade.toFixed(2)}. Felicitaciones! 🎉
 			</p>
 		{:else if suspense}
 			<p class="text-warning-700">
