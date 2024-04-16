@@ -37,7 +37,7 @@
 
 <form
 	use:enhance
-	class="border-tertiary-500 flex w-[350px] flex-col gap-y-4 rounded-3xl border p-4 md:w-[460px] md:p-8"
+	class="flex w-[350px] flex-col gap-y-4 rounded-3xl border border-tertiary-500 p-4 md:w-[460px] md:p-8"
 >
 	<label class="label" for="firstBimesterGrade">
 		<span>Nota primer bimestre</span>
@@ -65,7 +65,7 @@
 	{#if $errors.secondBimesterGrade}
 		<span class="text-error-500">{$errors.secondBimesterGrade}</span>
 	{/if}
-	<hr class="!border-tertiary-500 mt-4" />
+	<hr class="mt-4 !border-tertiary-500" />
 	{#if isValid}
 		{#if approved}
 			<p class="text-success-600">
@@ -73,15 +73,15 @@
 			</p>
 		{:else if suspense}
 			<p class="text-warning-700">
-				Debes alcanzar <span class="text-warning-500 font-bold">{finalExamGrade.toFixed(2)}/40</span
+				Debes alcanzar <span class="font-bold text-warning-500">{finalExamGrade.toFixed(2)}/40</span
 				>
 				en el examen final (supletorio) para aprobar la materia.
 				<br />
 				Nota a alcanzar sobre 20:
-				<span class="text-warning-500 font-bold">{(finalExamGrade / 2).toFixed(2)}</span>
+				<span class="font-bold text-warning-500">{(finalExamGrade / 2).toFixed(2)}</span>
 				<br />
 				Nota a alcanzar sobre 10:
-				<span class="text-warning-500 font-bold">{(finalExamGrade / 4).toFixed(2)}</span>
+				<span class="font-bold text-warning-500">{(finalExamGrade / 4).toFixed(2)}</span>
 			</p>
 		{:else}
 			<p class="text-error-500">Reprobaste la materia con {semesterGrade.toFixed(2)} 😔</p>
