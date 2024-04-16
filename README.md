@@ -1,4 +1,4 @@
-# Calculadora de nota Examen Final EPN
+# Calculadora de nota examen final EPN
 
 Aplicación web para calcular la nota a obtener en el examen final (supletorio) de la Escuela Poltécnica Nacional [(EPN)](https://www.epn.edu.ec/)
 
