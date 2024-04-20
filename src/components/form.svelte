@@ -25,7 +25,7 @@
 		if (semesterGrade < 18) {
 			approved = false;
 			suspense = false;
-		} else if (semesterGrade >= 18 && semesterGrade < 28) {
+		} else if (semesterGrade < 28) {
 			approved = false;
 			suspense = true;
 			finalExamGrade = Math.max(minimumExamGrade, minimumExamGrade * 2 - semesterGrade);
