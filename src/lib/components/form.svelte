@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { superForm } from "sveltekit-superforms";
 	import { zodClient } from "sveltekit-superforms/adapters";
-	import { formSchema } from "../schemas";
+	import { formSchema } from "$lib/schemas";
+	import { getFinalExamGrade } from "$lib/utils";
 
 	const { form, errors, enhance, validateForm } = superForm(
 		{ firstBimesterGrade: 0, secondBimesterGrade: 0 },
@@ -14,9 +15,7 @@
 	let semesterGrade: number;
 	let finalExamGrade: number;
 
-	const minimumExamGrade = 24;
-
-	async function checkApprovedStatus() {
+	export async function checkApprovedStatus() {
 		const result = await validateForm();
 		isValid = result.valid;
 
@@ -28,7 +27,7 @@
 		} else if (semesterGrade < 28) {
 			approved = false;
 			suspense = true;
-			finalExamGrade = Math.max(minimumExamGrade, minimumExamGrade * 2 - semesterGrade);
+			finalExamGrade = getFinalExamGrade(semesterGrade);
 		} else {
 			approved = true;
 			suspense = false;
@@ -45,7 +44,7 @@
 	</label>
 	<input
 		type="number"
-		name="firstBimesterGrade"
+		id="firstBimesterGrade"
 		bind:value={$form.firstBimesterGrade}
 		on:input={checkApprovedStatus}
 		class="input"
@@ -58,7 +57,7 @@
 	</label>
 	<input
 		type="number"
-		name="secondBimesterGrade"
+		id="secondBimesterGrade"
 		bind:value={$form.secondBimesterGrade}
 		on:input={checkApprovedStatus}
 		class="input"
